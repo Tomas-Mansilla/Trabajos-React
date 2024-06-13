@@ -1,15 +1,16 @@
 import React from "react";
 
 import NavBarComponent from "./components/NavBarComponents";
-import ItemListContainerComponent from "./components/ItemListContainerComponent/ItemListContainerComponent";
+import ItemListContainerComponent from "./components/ItemListContainerComponent";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import MainRouter from "./routes/MainRouter";
+
 
 function App() {
   return (
     <>
-      <NavBarComponent />
-      <ItemListContainerComponent greeting="Bienvenidos a NinfaPetshop"/>
+     <MainRouter/>
     </>
   );
 }
