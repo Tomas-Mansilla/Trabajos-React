@@ -1,5 +1,5 @@
 import React from "react";
-
+import CartContext from "./context/CartContext";
 import NavBarComponent from "./components/NavBarComponents";
 import ItemListContainerComponent from "./components/ItemListContainerComponent";
 

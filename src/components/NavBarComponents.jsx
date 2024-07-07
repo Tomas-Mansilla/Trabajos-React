@@ -8,16 +8,12 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 import CartWidgetComponent from "./CartWidgetComponent";
 import { getAllCategories } from "../services/products";
+import { useCollecionItems } from "../hooks/useCollecionItems";
 
 const NavBarComponent = () => {
-  const [categories, setCategories] = React.useState([]);
-  React.useEffect(() => {
-    getAllCategories().then((res) => {
-      setCategories(res.data);
-    }).catch((error) => {
-      console.error(error);
-    });
-  })
+  
+const {items} = useCollecionItems ("category")
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary" bg="dark" data-bs-theme="dark">
       <Container>
@@ -29,7 +25,7 @@ const NavBarComponent = () => {
             <Nav.Link href="#link">Link</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
 
-              {categories.map((category) => {
+              {items.map((category) => {
                 return (
                   <NavDropdown.Item key={category.id}>
                     <link to={`/category/${category.id}`}>{category.name}</link>
